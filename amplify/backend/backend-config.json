@@ -4,5 +4,21 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
+	},
+	"function": {
+		"sampleFunc": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "cognitocf0c6096",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			]
+		}
 	}
 }
